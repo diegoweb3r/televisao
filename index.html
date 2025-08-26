@@ -10,32 +10,34 @@
 <body>
     <section id="remoteControlContainer">
         <div class="remoteControl">
-            <div class="bottons onOff">On/Off</div>
-            <div class="bottons chPlus">Ch+</div>
-            <div class="bottons chMinus">Ch-</div>
-            <div class="visorControl"></div>
-            <div class="bottons volPlus">Vol+</div>
-            <div class="bottons volMinus">Vol-</div>
-            <div class="bottons">1</div>
-            <div class="bottons">2</div>
-            <div class="bottons">3</div>
-            <div class="bottons">4</div>
-            <div class="bottons">5</div>
-            <div class="bottons">6</div>
-            <div class="bottons">7</div>
-            <div class="bottons">8</div>
-            <div class="bottons">9</div>
-            <div class="bottons empty"></div>
-            <div class="bottons">0</div>
-            <div class="bottons empty"></div>
+            <div id="turnOnOffButton" class="bottons onOff">On/Off</div>
+            <div id="chPlusButton" class="bottons chPlus">Ch+</div>
+            <div id="chMinusButton" class="bottons chMinus">Ch-</div>
+            <div id="screenRemoteControl" class="visorControl"></div>
+            <div id="volPlusButton" class="bottons volPlus">Vol+</div>
+            <div id="vilMinusButton" class="bottons volMinus">Vol-</div>
+            <div id="oneButton" class="bottons">1</div>
+            <div id="twoButton" class="bottons">2</div>
+            <div id="threeButton" class="bottons">3</div>
+            <div id="fourButton" class="bottons">4</div>
+            <div id="fiveButton" class="bottons">5</div>
+            <div id="sixButton" class="bottons">6</div>
+            <div id="sevenButton" class="bottons">7</div>
+            <div id="eigthButton" class="bottons">8</div>
+            <div id="nineButton" class="bottons">9</div>
+            <div id="lightModeButton" class="bottons empty">L</div>
+            <div id="zeroButton" class="bottons">0</div>
+            <div id="darkModeButton" class="bottons empty">D</div>
         </div>
     </section>
     
     <section id="TVContainer">
         <div class="tvBorder">
-            <div class="tvScreen"></div>
-            <div class="button"></div>
+            <div id="tvScreen" class="tvScreen"></div>
+            <div id="onOffLight" class="tvLight offLight"></div>
         </div>
     </section> 
+
+    <script src="script.js"></script>
 </body>
 </html>

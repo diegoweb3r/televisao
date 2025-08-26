@@ -1,0 +1,7 @@
+changeChanel()
+1 Verificar se TV estiver ligada
+2 se desligada, nao fazer nada
+3 se ligada >
+4 somar o canal ou diminuir o canal
+5 alterar numero do canal no visor do controle 
+6 mudar a tela da tv
