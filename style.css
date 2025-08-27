@@ -7,10 +7,10 @@ body {
   height: 100vh;
   widows: 100vw;
   display: flex;
+  background-color: #fffafa;
 }
 
 #remoteControlContainer {
-  background-color: bisque;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,18 +18,18 @@ body {
 }
 
 .remoteControl {
-  width: 15rem;
- 
-  background-color: brown;
+  width: 14.5rem;
+  background-color: #343434;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 70px);
   grid-auto-rows: 60px;
-  padding: 1rem;
+  padding: 1.5rem;
   gap: 10px;
 }
 
-.bottons, .nbottons{
+.bottons,
+.nbottons {
   color: white;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
@@ -51,7 +51,8 @@ body {
   border-radius: 5px;
 }
 
-.bottons:active, .nbottons:active {
+.bottons:active,
+.nbottons:active {
   top: 10px;
   background-color: #f78900;
   -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
@@ -59,16 +60,17 @@ body {
   box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
 }
 
-.bottons:after, .nbottons:after{
-    content:"";
-  height:100%;
-  width:100%;
-  padding:4px;
+.bottons:after,
+.nbottons:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
   position: absolute;
-  bottom:-15px;
-  left:-4px;
-  z-index:-1;
-  background-color:#2B1800;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #2b1800;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -81,8 +83,10 @@ body {
   align-items: center;
   grid-column: 2;
   grid-row: 2 / 4;
+  margin-top: 0.5rem;
   color: white;
   font-size: 2rem;
+  border-radius: 0.5rem;
 }
 
 .onOff {
@@ -90,46 +94,47 @@ body {
 }
 
 #TVContainer {
-  background-color: rgb(163, 94, 9);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.tvBorder{
-    width: 80%;
-    height: 500px;
-    background-color: #ffe5c4;
-    border-radius: .3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.tvScreen{
-    background-color: #222;
-    width: 98%;
-    height: 95%;
-    border-radius: .3rem;
+
+.tvBorder {
+  width: 80%;
+  height: 500px;
+  background-color: #2f4f4f;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.tvLight{
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    margin-top: 2px;
+.tvScreen {
+  background-color: #222;
+  width: 98%;
+  height: 95%;
+  border-radius: 0.3rem;
 }
 
-.offLight{
-    background-color: red;
+.tvLight {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-top: 2px;
 }
 
-.onLight{
-    background-color: green;
+.offLight {
+  background-color: red;
 }
 
-img{
-    width: 100%;
-    height: 100%;
-    border-radius: .3rem;
+.onLight {
+  background-color: green;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3rem;
 }
