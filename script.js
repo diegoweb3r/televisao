@@ -18,9 +18,11 @@ const lightModeButton = document.getElementById("lightModeButton");
 const darkModeButton = document.getElementById("darkModeButton");
 const tvScreen = document.getElementById("tvScreen");
 const onOffLight = document.getElementById("onOffLight");
+const numberButtons = document.querySelectorAll(".nbottons");
 let isTVOn = false;
 let chanel = 1;
 let volume = 10;
+let numbersKey = "";
 
 function isTVOnorOff() {
   isTVOn = !isTVOn;
@@ -37,6 +39,7 @@ function isTVOnorOff() {
     tvScreen.innerHTML = " ";
     screenRemoteControl.innerHTML = "";
     screenRemoteControl.style.backgroundColor = "#222";
+    numbersKey = "";
   }
 }
 
@@ -46,9 +49,29 @@ function turnOnOffTV() {
   volume = 10;
 }
 
-function changeChanel(){
-    
-}
+numberButtons.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const numeroClicado = botao.textContent;
+    numbersKey = numbersKey + numeroClicado;
+    if (isTVOn) {
+      if (numbersKey.length > 2) {
+        screenRemoteControl.innerHTML = "Erro";
+        numbersKey = "";
+      } else {
+        screenRemoteControl.innerHTML = numbersKey;
+        chanel = parseInt(numbersKey);
+        numbersKey = "";
+
+      }
+
+      setTimeout(() => {
+        wichChannel(chanel);
+      }, 1000);
+    } else {
+      alert("Tv desligada");
+    }
+  });
+});
 
 function changeChanelPlus() {
   if (isTVOn) {
@@ -100,7 +123,6 @@ function wichChannel() {
 function volumeUp() {
   if (isTVOn) {
     volume++;
-    screenRemoteControl.innerHTML = volume;
     screenRemoteControl.innerHTML = volume;
     setTimeout(() => {
       screenRemoteControl.innerHTML = chanel;
