@@ -14,11 +14,12 @@ const sevenButton = document.getElementById("sevenButton");
 const eigthButton = document.getElementById("eigthButton");
 const nineButton = document.getElementById("nineButton");
 const zeroButton = document.getElementById("zeroButton");
-const lightModeButton = document.getElementById("lightModeButton");
+const OkButton = document.getElementById("OkButton");
 const darkModeButton = document.getElementById("darkModeButton");
 const tvScreen = document.getElementById("tvScreen");
 const onOffLight = document.getElementById("onOffLight");
 const numberButtons = document.querySelectorAll(".nbottons");
+const body = document.querySelector("body");
 let isTVOn = false;
 let chanel = 1;
 let volume = 10;
@@ -49,7 +50,7 @@ function turnOnOffTV() {
   volume = 10;
 }
 
-numberButtons.forEach((botao) => {
+/* numberButtons.forEach((botao) => {
   botao.addEventListener("click", () => {
     const numeroClicado = botao.textContent;
     numbersKey = numbersKey + numeroClicado;
@@ -58,15 +59,32 @@ numberButtons.forEach((botao) => {
         screenRemoteControl.innerHTML = "Erro";
         numbersKey = "";
       } else {
-        screenRemoteControl.innerHTML = numbersKey;
-        chanel = parseInt(numbersKey);
-        numbersKey = "";
-
+        screenRemoteControl.innerHTML = numbersKey;        
       }
-
+      chanel = parseInt(numbersKey);
       setTimeout(() => {
         wichChannel(chanel);
-      }, 1000);
+      }, 1000);numbersKey = "";
+      
+    } else {
+      alert("Tv desligada");
+    }
+  });
+}); */
+
+numberButtons.forEach((botao) => {
+  botao.addEventListener("click", () => {
+    const numeroClicado = botao.textContent;
+    numbersKey = numbersKey + numeroClicado;
+
+    if (isTVOn) {
+      if (numbersKey.length > 2) {
+        screenRemoteControl.innerHTML = "Erro";
+        numbersKey = "";
+      } else {
+        screenRemoteControl.innerHTML = numbersKey;
+        chanel = parseInt(numbersKey);
+      }
     } else {
       alert("Tv desligada");
     }
@@ -99,24 +117,31 @@ function wichChannel() {
   switch (chanel) {
     case 1:
       tvScreen.innerHTML = '<img src="./assets/Globo.webp" alt="">';
+     
       break;
     case 2:
       tvScreen.innerHTML = '<img src="./assets/SBT.jpeg" alt="">';
+       
       break;
     case 3:
       tvScreen.innerHTML = '<img src="./assets/Record.png" alt="">';
+       
       break;
     case 4:
       tvScreen.innerHTML = '<img src="./assets/Band TV.webp" alt="">';
+   
       break;
     case 5:
       tvScreen.innerHTML = '<img src="./assets/Cultura.webp" alt="">';
+    
       break;
     case 6:
       tvScreen.innerHTML = '<img src="./assets/Netflix.webp" alt="">';
+  
       break;
     default:
       tvScreen.innerHTML = '<img src="./assets/semsinal.jpg" alt="">';
+
   }
 }
 
@@ -151,3 +176,13 @@ chPlusButton.addEventListener("click", changeChanelPlus);
 chMinusButton.addEventListener("click", changeChanelMinus);
 volPlusButton.addEventListener("click", volumeUp);
 vilMinusButton.addEventListener("click", volumeDown);
+darkModeButton.addEventListener("click", darkmode);
+OkButton.addEventListener("click", () =>{
+  wichChannel();
+  numbersKey = "";
+  screenRemoteControl.innerHTML = "";
+});
+
+function darkmode() {
+  body.classList.toggle("dark");
+}
