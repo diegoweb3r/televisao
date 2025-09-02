@@ -51,27 +51,6 @@ function turnOnOffTV() {
   volume = 10;
 }
 
-/* numberButtons.forEach((botao) => {
-  botao.addEventListener("click", () => {
-    const numeroClicado = botao.textContent;
-    numbersKey = numbersKey + numeroClicado;
-    if (isTVOn) {
-      if (numbersKey.length > 2) {
-        screenRemoteControl.innerHTML = "Erro";
-        numbersKey = "";
-      } else {
-        screenRemoteControl.innerHTML = numbersKey;        
-      }
-      chanel = parseInt(numbersKey);
-      setTimeout(() => {
-        wichChannel(chanel);
-      }, 1000);numbersKey = "";
-      
-    } else {
-      alert("Tv desligada");
-    }
-  });
-}); */
 
 numberButtons.forEach((botao) => {
   botao.addEventListener("click", () => {
@@ -195,4 +174,10 @@ OkButton.addEventListener("click", () =>{
 
 function darkmode() {
   body.classList.toggle("dark");
+  if (body.classList.contains("dark")){
+    tvScreen.style.boxShadow = '0 0 100px rgb(255, 238, 0)';
+  } else {
+    tvScreen.style.boxShadow = 'none';
+  }
+  
 }

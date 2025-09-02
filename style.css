@@ -24,7 +24,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 70px);
   grid-auto-rows: 60px;
-  padding: 1.5rem;
+  padding: 2rem;
   gap: 10px;
 }
 
@@ -109,6 +109,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .tvScreen {
@@ -116,6 +117,7 @@ body {
   width: 98%;
   height: 95%;
   border-radius: 0.3rem;
+
 }
 
 .tvLight {
