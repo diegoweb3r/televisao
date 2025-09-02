@@ -24,6 +24,7 @@ let isTVOn = false;
 let chanel = 1;
 let volume = 10;
 let numbersKey = "";
+let volumeTimeoutId;
 
 function isTVOnorOff() {
   isTVOn = !isTVOn;
@@ -149,7 +150,12 @@ function volumeUp() {
   if (isTVOn) {
     volume++;
     screenRemoteControl.innerHTML = volume;
-    setTimeout(() => {
+
+    if (volumeTimeoutId){
+      clearTimeout(volumeTimeoutId)
+    }
+
+    volumeTimeoutId = setTimeout(() => {
       screenRemoteControl.innerHTML = chanel;
     }, 1000);
   } else {
@@ -163,7 +169,11 @@ function volumeDown() {
       volume--;
     }
     screenRemoteControl.innerHTML = volume;
-    setTimeout(() => {
+    if (volumeTimeoutId){
+      clearTimeout(volumeTimeoutId)
+    }
+
+    volumeTimeoutId = setTimeout(() => {
       screenRemoteControl.innerHTML = chanel;
     }, 1000);
   } else {
@@ -180,7 +190,7 @@ darkModeButton.addEventListener("click", darkmode);
 OkButton.addEventListener("click", () =>{
   wichChannel();
   numbersKey = "";
-  screenRemoteControl.innerHTML = "";
+  screenRemoteControl.innerHTML = chanel;
 });
 
 function darkmode() {
